@@ -20,9 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors())
 
-app.use('/v1.0/clinets/all', require('./routes/v1.js'))
-app.use('/v1.0/clinets/all', require('./routes/v2.js'))
-app.use('/v1.0/clinets/all', require('./routes/v3.js'))
+app.use('/v1.0/clinets/all', require('./routes/v1.0.js'))
+app.use('/v2.0/clinets/all', require('./routes/v2.0.js'))
+app.use('/v3.0/clinets/all', require('./routes/v3.0.js'))
 
 
 // catch 404 and forward to error handler
