@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <button id="send">send</button>
+  <hr>
+  <div id="result"></div>
+
+  <script type="text/javascript">
+    const send = document.getElementById('send')
+    const result = document.getElementById('result')
+
+    let data = {
+      a: 1,
+      b: 2,
+      c: "hello"
+    }
+
+    const sendData = () => {
+      const body = JSON.stringify(data)
+      console.log('data = ', data);
+      fetch('/v1.0/clinets/all', {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        // credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+            "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+        // redirect: "follow", // manual, *follow, error
+        // referrer: "no-referrer", // no-referrer, *client
+        body: body
+      })
+        .then(r => r.json())
+        .then(json => {
+          console.log('json = ', json);
+          result.innerHTML += (JSON.stringify(json))
+        })
+    }
+
+    send.addEventListener('click', () => {
+      sendData()
+    })
+
+    
+  </script>
+</body>
+</html>
