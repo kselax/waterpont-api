@@ -14,7 +14,7 @@ const dbOptions = {
   region: "us-east-1",
   // endpoint: "https://dynamodb.us-east-1.amazonaws.com",
   // accessKeyId: "your-key-id",
-  // secretAccessKey: "your-access-key"
+  // secretAccessKey: "your-access-keyвввв"
   endpoint: "https://dynamodb.us-east-1.amazonaws.com",
   accessKeyId: "your-key-id",
   secretAccessKey: "your-access-key",
