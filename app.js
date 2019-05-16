@@ -13,11 +13,11 @@ const dbOptions = {
   apiVersion: '2012-08-10',
   region: "us-east-1",
   // endpoint: "https://dynamodb.us-east-1.amazonaws.com",
-  // accessKeyId: "AKIAQGOCYHT3KBVUW64S",
-  // secretAccessKey: "Kile+E6Rz0jIf3XrytDYBXzvgqBRlzf5h7CYjLJk"
+  // accessKeyId: "your-key-id",
+  // secretAccessKey: "your-access-key"
   endpoint: "https://dynamodb.us-east-1.amazonaws.com",
-  accessKeyId: "AKIA56LNNCUPPM6CXPMF",
-  secretAccessKey: "w9wQzQ6CoqtxhnngUzlgaiec2mUMdA8M7a8J8P1m",
+  accessKeyId: "your-key-id",
+  secretAccessKey: "your-access-key",
 }
 AwsDB.setOptions(dbOptions)
 
