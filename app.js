@@ -6,6 +6,28 @@ var logger = require('morgan');
 
 const cors = require('cors')
 
+const fs = require('fs')
+
+const AwsDB = require('./app/AwsDB')
+const dbOptions = {
+  apiVersion: '2012-08-10',
+  region: "us-east-1",
+  // endpoint: "https://dynamodb.us-east-1.amazonaws.com",
+  // accessKeyId: "AKIAQGOCYHT3KBVUW64S",
+  // secretAccessKey: "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"
+  endpoint: "https://dynamodb.us-east-1.amazonaws.com",
+  accessKeyId: "AKIA56LNNCUPPM6CXPMF",
+  secretAccessKey: "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",
+}
+AwsDB.setOptions(dbOptions)
+
+// console.log('AwsDB = ', AwsDB.dynamodb);
+// console.log('AwsDB = ', AwsDB.docClient);
+
+
+
+
+
 var app = express();
 
 // view engine setup
@@ -20,9 +42,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors())
 
-app.use('/v1.0/clinets/all', require('./routes/v1.0.js'))
-app.use('/v2.0/clinets/all', require('./routes/v2.0.js'))
-app.use('/v3.0/clinets/all', require('./routes/v3.0.js'))
+// app.use('/', require('./routes/api.v1.users.js'))
+// app.use('/', require('./routes/api.v1.devices.js'))
+app.use('/', require('./routes/api.v1.clients.js'))
+
+
 
 
 // catch 404 and forward to error handler
