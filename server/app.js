@@ -5,27 +5,20 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const cors = require('cors')
+const Config = require('config')
+const passport = require('passport')
 
-const fs = require('fs')
 
 const AwsDB = require('./app/AwsDB')
+
 const dbOptions = {
-  apiVersion: '2012-08-10',
-  region: "us-east-1",
-  // endpoint: "https://dynamodb.us-east-1.amazonaws.com",
-  // accessKeyId: "AKIAQGOCYHT3KBVUW64S",
-  // secretAccessKey: "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"
-  endpoint: "https://dynamodb.us-east-1.amazonaws.com",
-  accessKeyId: "AKIA56LNNCUPPM6CXPMF",
-  secretAccessKey: "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",
+  apiVersion: Config.AWSDB.apiVersion,
+  region: Config.AWSDB.region,
+  endpoint: Config.AWSDB.endpoint,
+  accessKeyId: Config.AWSDB.accessKeyId,
+  secretAccessKey: Config.AWSDB.secretAccessKey,
 }
 AwsDB.setOptions(dbOptions)
-
-// console.log('AwsDB = ', AwsDB.dynamodb);
-// console.log('AwsDB = ', AwsDB.docClient);
-
-
-
 
 
 var app = express();
@@ -38,15 +31,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.use(cors())
 
-// app.use('/', require('./routes/api.v1.users.js'))
-// app.use('/', require('./routes/api.v1.devices.js'))
-app.use('/', require('./routes/api.v1.clients.js'))
+// routes
+app.use('/api/v1/clients', 
+  passport.authenticate('jwt', {session: false}),
+  require('./routes/api.v1.clients.js'))
 
-
+app.use('/auth', require('./routes/auth.js'))
 
 
 // catch 404 and forward to error handler
@@ -66,5 +61,7 @@ app.use(function(err, req, res, next) {
 });
 
 const server = require('http').Server(app)
+
+require('./app/passport.js')(passport)
 
 module.exports = { app, server };
