@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "cad9beef-c1a4-4f57-8a3f-a9bfaed73323",
+		"name": "waterpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3002/api/v1/client",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"12jerlkrtjk323kj\",\n    \"data\": {\n    \t\"id\":11\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/v1/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"v1",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/api/v1/client-save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"12jerlkrtjk323kj\",\n    \"data\": {\n    \t\"id\":11,\n    \t\"login\": \"Sergey\",\n    \t\"pass\": \"123456\",\n    \t\"date\": \"12-12-2019\"\n    }\n  }\n"
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/v1/client-save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"v1",
+						"client-save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/api/v1/clients-all",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"12jerlkrtjk323kj\",\n    \"data\": {}\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/v1/clients-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"v1",
+						"clients-all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
