@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"token\": \"12jerlkrtjk323kj\",\n    \"data\": {\n    \t\"id\":11\n    }\n}\n"
+					"raw": "{\n    \"token\": \"12jerlkrtjk323kj\",\n    \"data\": {\n    \t\"id\": 11\n    }\n}\n"
 				},
 				"url": {
 					"raw": "http://localhost:3002/api/v1/client",
@@ -96,6 +96,38 @@
 						"api",
 						"v1",
 						"clients-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3002/api/v1/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"12jerlkrtjk323kj\",\n    \"data\": {\n    \t\"login\": \"admin\",\n    \t\"pass\": \"12345\"\n    }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"v1",
+						"auth"
 					]
 				}
 			},
