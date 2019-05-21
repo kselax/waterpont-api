@@ -1,0 +1,44 @@
+// Home specific styles
+.loginForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center top;
+  background-image: url(/img/bg5.jpg);
+  // background-image: url(/img/bg4.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginForm > div{
+  position: relative;
+  // border: 2px solid red;
+  height: 300px;
+  width: 300px;
+  // background: gray;
+  // opacity: 0.8;
+}
+
+.background {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  border: 2px solid blue;
+  top: 0;
+  left: 0;
+  background: blue;
+  opacity: 0.9;
+}
+.form {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  // border: 2px solid;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // pointer-events:none !important;
+}

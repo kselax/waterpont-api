@@ -1,0 +1,89 @@
+// Grid system
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+
+
+
+// for small devices
+@media (max-width: 800px) {
+  .flex-grid {
+    flex-wrap: wrap;
+  }
+}
+
+// for small devices
+@media (max-width: 400px) {
+  .flex-grid {
+    flex-direction: column;
+  }
+}
+
+// add gutter to the column
+// .flex-grid-thirds {
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .flex-grid-thirds .col {
+//   width: 32%;
+// }
+
+.flexContainer {
+  display: flex;
+}
+
+.flexItem {
+  flex: 1;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+
+
+
+
+// my grid
+
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+
+// align-items
+.a-i-center {
+  align-items: center;
+}
+.a-i-flex-start {
+  align-items: flex-start;
+}
+.a-i-flex-end {
+  align-items: flex-end;
+}
+
+// justify-content
+.j-c-flex-start {
+    justify-content: flex-start;
+}
+
+.j-c-flex-end{ 
+    justify-content: flex-end;
+}
+

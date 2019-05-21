@@ -1,0 +1,35 @@
+.form-edit {
+  // height: 300px;
+  // width: 300px;
+  // position: absolute;
+  // border: 2px solid;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // pointer-events:none !important;
+
+  .error {
+    color: red;
+    font-weight: 600;
+    border: 6px solid red;
+    padding: 10px;
+    background: white;
+  }
+
+  .success {
+    color: green;
+    font-weight: 600;
+    border: 6px solid green;
+    padding: 10px;
+    background: white;
+  }
+
+
+}
+
+.back {
+  padding: 10px 0 10px 20px;
+  border-bottom: 3px dashed;
+}

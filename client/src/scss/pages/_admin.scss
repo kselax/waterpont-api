@@ -1,0 +1,98 @@
+// Home specific styles
+.admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center top;
+  background-image: url(/img/bg5.jpg);
+  // background-image: url(/img/bg4.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  h1 {
+    text-align: center;
+
+    button {
+      font-size: 20px;
+      padding: 5px;
+      background: aquamarine;
+      color: chocolate;
+    }
+  }
+
+  .createButton {
+    text-align: right;
+    padding: 0 20px 10px;
+    margin: 40px 0px 10px;
+    border-bottom: dashed;
+
+    button {
+      font-size: 30px;
+      padding: 5px;
+      background: lime;
+      color: red;
+    }
+  }
+
+  .userListTitle {
+    text-align: center;
+  }
+
+  .user {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid;
+    margin: 10px;
+    padding: 20px;
+
+    .actions {
+      button {
+        background: aquamarine;
+        margin: 0 0 0 5px;
+        font-size: 15px;
+        padding: 5px;
+        background: aquamarine;
+        color: chocolate;
+      }
+    }
+  }
+}
+
+.admin > div{
+  position: relative;
+  // border: 2px solid red;
+  height: 100%;
+  width: 80%;
+  max-width: 900px;
+  overflow: auto;
+  // background: gray;
+  // opacity: 0.8;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  border: 2px solid blue;
+  top: 0;
+  left: 0;
+  background: blue;
+  opacity: 0.9;
+}
+.forground {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  // border: 5px solid red;
+  top: 0;
+  left: 0;
+  
+  .hello {
+    font-size: 20px;
+  }
+  .title {
+    text-decoration: underline;
+  }
+}

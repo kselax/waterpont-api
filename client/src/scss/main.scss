@@ -1,0 +1,21 @@
+@import "vendors/_normalize.scss";
+
+@import "base/_reset.scss";
+@import "base/_typography.scss";
+
+@import "components/_buttons.scss";
+@import "components/_preloader.scss";
+
+@import "layout/_grid.scss";
+@import "layout/_header.scss";
+@import "layout/_navigation.scss";
+@import "layout/_footer.scss";
+@import "layout/_forms.scss";
+
+
+// pages
+@import "pages/_home.scss";
+@import "pages/_admin.scss";
+@import "pages/_admin.edit.scss";
+@import "pages/_admin.create.scss";
+@import "pages/_user.scss";

@@ -5,6 +5,21 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const cors = require('cors')
+const Config = require('config')
+const passport = require('passport')
+
+
+const AwsDB = require('./app/AwsDB')
+
+const dbOptions = {
+  apiVersion: Config.AWSDB.apiVersion,
+  region: Config.AWSDB.region,
+  endpoint: Config.AWSDB.endpoint,
+  accessKeyId: Config.AWSDB.accessKeyId,
+  secretAccessKey: Config.AWSDB.secretAccessKey,
+}
+AwsDB.setOptions(dbOptions)
+
 
 var app = express();
 
@@ -16,13 +31,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.use(cors())
 
-app.use('/v1.0/clinets/all', require('./routes/v1.0.js'))
-app.use('/v2.0/clinets/all', require('./routes/v2.0.js'))
-app.use('/v3.0/clinets/all', require('./routes/v3.0.js'))
+// routes
+app.use('/api/v1/clients', 
+  passport.authenticate('jwt', {session: false}),
+  require('./routes/api.v1.clients.js'))
+
+app.use('/auth', require('./routes/auth.js'))
 
 
 // catch 404 and forward to error handler
@@ -42,5 +61,7 @@ app.use(function(err, req, res, next) {
 });
 
 const server = require('http').Server(app)
+
+require('./app/passport.js')(passport)
 
 module.exports = { app, server };
