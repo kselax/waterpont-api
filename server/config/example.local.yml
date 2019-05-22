@@ -1,0 +1,11 @@
+AWSDB:
+  apiVersion: "2012-08-10"
+  region: "us-east-1"
+  endpoint: "https://dynamodb.us-east-1.amazonaws.com"
+  accessKeyId: "your_key_id"
+  secretAccessKey: "your_access_key"
+
+ADMIN:
+  token: "your_admin_token"
+  login: "admin"
+  pass: "12345"
