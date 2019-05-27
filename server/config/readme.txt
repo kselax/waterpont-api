@@ -1,1 +1,1 @@
-change local1.yml to local.yml and input your data
+Чтобы создать конфиг создайте файл local.yml и скопируйте в него содержимое из файл example.local.yml. Затем замените данные на свои

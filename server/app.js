@@ -17,6 +17,11 @@ app.use(cors())
 app.use('/api/v1', require('./api/v1/index.js'));
 
 
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   return res.json({ error: "404", message: "Not found" });
